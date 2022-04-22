@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            Clique pra baixar os concorrentes: <button type="button" id="btGames" class="btn btn-primary">Obter Games</button>
+        </div>
+
+        <div class="card-body">
+
+            <div class="container-fluid">
+                <div class="row" id="corpo">
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-footer">
+            <button type="button" class="btn btn-info" id="btEnviar">Enviar</button>
+        </div>
+
+    </div>
+
+
+    <div class="card" id="result">
+
+
+        <div class="card-body">
+
+            <div class="container-fluid">
+
+                <div class="alert alert-primary" role="alert">
+                    A simple primary alert—check it out!
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-header">Campeão</div>
+                            <div class="card-body">
+                                <span id="campeaoNome"></span><br />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-header">Vice</div>
+                            <div class="card-body">
+                                <span id="viceNome"></span><br />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-header">Terceiro</div>
+                            <div class="card-body">
+                                <span id="terceiroNome"></span><br />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-header">Quarto</div>
+                            <div class="card-body">
+                                <span id="quartoNome"></span><br />
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</div>
