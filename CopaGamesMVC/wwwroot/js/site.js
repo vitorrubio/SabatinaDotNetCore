@@ -9,13 +9,12 @@ bootstrap_alert.warning = function (message) {
 }
 
 $(function () {
-    $("#btGames").click(function () {
-        $.ajax({
-            method: "GET",
-            //url: "https://localhost:5001/GameAwards/",
-            url: "https://l3-processoseletivo.azurewebsites.net/api/Competidores?copa=games",
-        }).done(function (resp) {
-            const item = ({ titulo, nota, ano, urlImagem }) => `
+    $.ajax({
+        method: "GET",
+        //url: "https://localhost:5001/GameAwards/",
+        url: "https://l3-processoseletivo.azurewebsites.net/api/Competidores?copa=games",
+    }).done(function (resp) {
+        const item = ({ titulo, nota, ano, urlImagem }) => `
                         <div class="card col-sm-4">
                             <div class="card-body">
                                 Selecionar: <input class="opcoes" type="checkbox" data-titulo="${titulo}" data-url="${urlImagem}" data-nota="${nota}" data-ano="${ano}" /><br />
@@ -25,11 +24,10 @@ $(function () {
                                 <img src="${urlImagem}" style="width:100px; height:auto" />
                             </div>
                         </div>`;
-            const games = JSON.parse(resp);
-            const listao = games.map(item).join('');
-            $("#corpo").append($(listao));
+        const games = JSON.parse(resp);
+        const listao = games.map(item).join('');
+        $("#corpo").append($(listao));
 
-        });
     });
 
 
