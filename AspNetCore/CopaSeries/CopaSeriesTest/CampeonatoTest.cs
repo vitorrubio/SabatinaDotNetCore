@@ -53,5 +53,60 @@ namespace CopaSeriesTest
             Assert.AreEqual("Quarto", r.QuartoLugar.Titulo);
 
         }
+
+        [TestMethod]
+        public void CriterioDesempateAno()
+        {
+            var competidores = new List<Serie> {
+                new Serie {Titulo = "empate1",   Nota = 10, Ano = 2000},
+                new Serie {Titulo = "empate2",   Nota = 10, Ano = 2001},
+                new Serie {Titulo = "empate3",   Nota = 10, Ano = 2002},
+                new Serie {Titulo = "empate4",   Nota = 10, Ano = 2003},
+                new Serie {Titulo = "empate5",   Nota = 10, Ano = 2004},
+                new Serie {Titulo = "empate6",   Nota = 10, Ano = 2005},
+                new Serie {Titulo = "empate7",   Nota = 10, Ano = 2006},
+                new Serie {Titulo = "empate8",   Nota = 10, Ano = 2007},
+            };
+
+
+            var c = new Campeonato(competidores.ToArray());
+            Resultado r = c.Eliminatorias();
+
+            Assert.IsNotNull(r);
+
+            Assert.AreEqual("empate8", r.Campeao.Titulo);
+            Assert.AreEqual("empate6", r.Vice.Titulo);
+            Assert.AreEqual("empate7", r.TerceiroLugar.Titulo);
+            Assert.AreEqual("empate5", r.QuartoLugar.Titulo);
+
+        }
+
+
+        [TestMethod]
+        public void CriterioDesempateAlfabetico()
+        {
+            var competidores = new List<Serie> {
+                new Serie {Titulo = "empate1",   Nota = 10, Ano = 2022},
+                new Serie {Titulo = "empate2",   Nota = 10, Ano = 2022},
+                new Serie {Titulo = "empate3",   Nota = 10, Ano = 2022},
+                new Serie {Titulo = "empate4",   Nota = 10, Ano = 2022},
+                new Serie {Titulo = "empate5",   Nota = 10, Ano = 2022},
+                new Serie {Titulo = "empate6",   Nota = 10, Ano = 2022},
+                new Serie {Titulo = "empate7",   Nota = 10, Ano = 2022},
+                new Serie {Titulo = "empate8",   Nota = 10, Ano = 2022},
+            };
+
+
+            var c = new Campeonato(competidores.ToArray());
+            Resultado r = c.Eliminatorias();
+
+            Assert.IsNotNull(r);
+
+            Assert.AreEqual("empate1", r.Campeao.Titulo);
+            Assert.AreEqual("empate3", r.Vice.Titulo);
+            Assert.AreEqual("empate2", r.TerceiroLugar.Titulo);
+            Assert.AreEqual("empate4", r.QuartoLugar.Titulo);
+
+        }
     }
 }

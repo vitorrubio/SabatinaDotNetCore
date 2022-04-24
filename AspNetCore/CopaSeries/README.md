@@ -1,4 +1,4 @@
-# SabatinaDotNetCore
+# Sabatina DotNet Core Rest API
 Lives / Talks de asp.net core restful api 
 
 ## Exemplo de Processo Seletivo: CopaSeries
@@ -15,6 +15,8 @@ Lives / Talks de asp.net core restful api
 - [Tipos de Action result no aspnet core web api](https://www.c-sharpcorner.com/article/action-result-in-asp-net-core-api/)
 - [swagger](https://swagger.io/)
 - [Novidades do .net 6](https://devblogs.microsoft.com/dotnet/announcing-net-6/)
+
+> o ajax deve ter contentType: 'application/json' para não precisar fazer parse. O server tem que ter o cabeçalho "content-type": "application/json; charset=utf-8 " pra não precisar setar no ajax
 
 
 ### Problemas comuns de acontecer
