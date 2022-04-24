@@ -3,6 +3,11 @@
 
 // Write your JavaScript code.
 
+bootstrap_alert = function () { }
+bootstrap_alert.warning = function (message) {
+    $('#alert_placeholder').html('<div class="alert alert-warning"><a class="close" data-dismiss="alert">×</a><span>' + message + '</span></div>')
+}
+
 $(function () {
     $("#btGames").click(function () {
         $.ajax({
@@ -10,31 +15,12 @@ $(function () {
             //url: "https://localhost:5001/GameAwards/",
             url: "https://l3-processoseletivo.azurewebsites.net/api/Competidores?copa=games",
         }).done(function (resp) {
-            let template = `                
-                <div class="card col-sm-4">
-                    <div class="card-body">
-                        Selecionar: <input class="opcoes" type="checkbox" data-titulo="{dtitulo}" data-url="{durl}" data-nota="{dnota}" data-ano="{dano}" /><br />
-                        Nome: <span >{nome}</span><br />
-                        Nota: <span >{nota}</span><br />
-                        Ano: <span >{ano}</span><br />
-                        <img src="{img}" style="width:100px; height:auto" />
-                    </div>
-                </div>`;
+            let templateStr = document.getElementById('template').innerHTML;
+            const item = ({ titulo, nota, ano, urlImagem }) => eval('`' + templateStr + '`');
+            const games = JSON.parse(resp);
+            const listao = games.map(item).join('');
+            $("#corpo").html(listao);
 
-            let result = JSON.parse(resp);
-            for (i = 0; i < result.length; i++) {
-                var elem = template
-                    .replace("{nome}", result[i].titulo)
-                    .replace("{ano}", result[i].ano)
-                    .replace("{nota}", result[i].nota)
-                    .replace("{img}", result[i].urlImagem)
-
-                    .replace("{dtitulo}", result[i].titulo)
-                    .replace("{durl}", result[i].urlImagem)
-                    .replace("{dnota}", result[i].nota)
-                    .replace("{dano}", result[i].ano)
-                $("#corpo").append($(elem));
-            }
         });
     });
 
@@ -67,7 +53,7 @@ $(function () {
             $("#terceiroNome").text(resp.terceiroLugar.titulo);
             $("#quartoNome").text(resp.quartoLugar.titulo);
         }).fail(function (jqXHR, textStatus, errorThrown) {
-            alert(jqXHR.responseText);
+            bootstrap_alert.warning(jqXHR.responseText);
         });
     });
 });

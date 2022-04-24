@@ -20,12 +20,28 @@
 
             <div class="container-fluid">
                 <div class="row" id="corpo">
+                    <template id="template">
+                        <div class="card col-sm-4">
+                            <div class="card-body">
+                                Selecionar: <input class="opcoes" type="checkbox" data-titulo="${titulo}" data-url="${urlImagem}" data-nota="${nota}" data-ano="${ano}" /><br />
+                                Nome: <span>${titulo}</span><br />
+                                Nota: <span>${nota}</span><br />
+                                Ano: <span>${ano}</span><br />
+                                <img src="${urlImagem}" style="width:100px; height:auto" />
+                            </div>
+                        </div>
+                    </template>
+                </div>
 
+                <div class="row" >
+                    <div class="col-sm-12" id="alert_placeholder">
+
+                    </div>
                 </div>
             </div>
 
         </div>
-
+        
         <div class="card-footer">
             <button type="button" class="btn btn-info" id="btEnviar">Enviar</button>
         </div>
@@ -40,9 +56,7 @@
 
             <div class="container-fluid">
 
-                <div class="alert alert-primary" role="alert">
-                    A simple primary alert—check it out!
-                </div>
+
 
                 <div class="row">
 
