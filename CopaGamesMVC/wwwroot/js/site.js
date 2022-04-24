@@ -15,11 +15,19 @@ $(function () {
             //url: "https://localhost:5001/GameAwards/",
             url: "https://l3-processoseletivo.azurewebsites.net/api/Competidores?copa=games",
         }).done(function (resp) {
-            let templateStr = document.getElementById('template').innerHTML;
-            const item = ({ titulo, nota, ano, urlImagem }) => eval('`' + templateStr + '`');
+            const item = ({ titulo, nota, ano, urlImagem }) => `
+                        <div class="card col-sm-4">
+                            <div class="card-body">
+                                Selecionar: <input class="opcoes" type="checkbox" data-titulo="${titulo}" data-url="${urlImagem}" data-nota="${nota}" data-ano="${ano}" /><br />
+                                Nome: <span>${titulo}</span><br />
+                                Nota: <span>${nota}</span><br />
+                                Ano: <span>${ano}</span><br />
+                                <img src="${urlImagem}" style="width:100px; height:auto" />
+                            </div>
+                        </div>`;
             const games = JSON.parse(resp);
             const listao = games.map(item).join('');
-            $("#corpo").html(listao);
+            $("#corpo").append($(listao));
 
         });
     });
@@ -52,8 +60,14 @@ $(function () {
             $("#viceNome").text(resp.vice.titulo);
             $("#terceiroNome").text(resp.terceiroLugar.titulo);
             $("#quartoNome").text(resp.quartoLugar.titulo);
+
+            $("#participantes").hide();
+            $("#result").show();
         }).fail(function (jqXHR, textStatus, errorThrown) {
             bootstrap_alert.warning(jqXHR.responseText);
+
+            $("#participantes").show();
+            $("#result").hide();
         });
     });
 });
