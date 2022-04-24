@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "CopaGamesMVC": {
+    "CopaSeriesMVC": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

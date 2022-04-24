@@ -1,29 +1,29 @@
-using CopaGamesApi.Controllers;
-using CopaGamesApi.Model;
+using CopaSeriesApi.Controllers;
+using CopaSeriesApi.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace CopaGamesTest
+namespace CopaSeriesTest
 {
     [TestClass]
-    public class GameAwardsControllerTest
+    public class SerieAwardsControllerTest
     {
         [TestMethod]
-        public void PostCompleteGame()
+        public void PostCompleteSerie()
         {
 
-            var controller = new GameAwardsController();
+            var controller = new SerieAwardsController();
 
-            var competidores = new List<Game> {
-                new Game {Titulo = "Mario", Nota = 10, Ano = 2000},
-                new Game {Titulo = "Sonic", Nota = 9, Ano = 2001},
-                new Game {Titulo = "SoT", Nota = 10, Ano = 2002},
-                new Game {Titulo = "Undertale", Nota = 8, Ano = 2003},
-                new Game {Titulo = "Celeste", Nota = 7, Ano = 2005},
-                new Game {Titulo = "Journey", Nota = 6, Ano = 2006},
-                new Game {Titulo = "Destiny", Nota = 5, Ano = 2007},
-                new Game {Titulo = "Outer Wilds", Nota = 10, Ano = 2007},
+            var competidores = new List<Serie> {
+                new Serie {Titulo = "Mario", Nota = 10, Ano = 2000},
+                new Serie {Titulo = "Sonic", Nota = 9, Ano = 2001},
+                new Serie {Titulo = "SoT", Nota = 10, Ano = 2002},
+                new Serie {Titulo = "Undertale", Nota = 8, Ano = 2003},
+                new Serie {Titulo = "Celeste", Nota = 7, Ano = 2005},
+                new Serie {Titulo = "Journey", Nota = 6, Ano = 2006},
+                new Serie {Titulo = "Destiny", Nota = 5, Ano = 2007},
+                new Serie {Titulo = "Outer Wilds", Nota = 10, Ano = 2007},
             };
 
             var response = controller.Post(competidores.ToArray());
@@ -45,16 +45,16 @@ namespace CopaGamesTest
         public void PostLessThanEight()
         {
 
-            var controller = new GameAwardsController();
+            var controller = new SerieAwardsController();
 
-            var competidores = new List<Game> {
-                new Game {Titulo = "Sonic", Nota = 9, Ano = 2001},
-                new Game {Titulo = "SoT", Nota = 10, Ano = 2002},
-                new Game {Titulo = "Undertale", Nota = 8, Ano = 2003},
-                new Game {Titulo = "Celeste", Nota = 7, Ano = 2005},
-                new Game {Titulo = "Journey", Nota = 6, Ano = 2006},
-                new Game {Titulo = "Destiny", Nota = 5, Ano = 2007},
-                new Game {Titulo = "Outer Wilds", Nota = 10, Ano = 2007},
+            var competidores = new List<Serie> {
+                new Serie {Titulo = "Sonic", Nota = 9, Ano = 2001},
+                new Serie {Titulo = "SoT", Nota = 10, Ano = 2002},
+                new Serie {Titulo = "Undertale", Nota = 8, Ano = 2003},
+                new Serie {Titulo = "Celeste", Nota = 7, Ano = 2005},
+                new Serie {Titulo = "Journey", Nota = 6, Ano = 2006},
+                new Serie {Titulo = "Destiny", Nota = 5, Ano = 2007},
+                new Serie {Titulo = "Outer Wilds", Nota = 10, Ano = 2007},
             };
 
             var response = controller.Post(competidores.ToArray());
@@ -62,7 +62,7 @@ namespace CopaGamesTest
             var actual = response.Result as BadRequestObjectResult;
             Assert.IsNotNull(actual);
             Assert.AreEqual(400, actual.StatusCode);
-            Assert.AreEqual("Envie exatamente 8 games", actual.Value);
+            Assert.AreEqual("Envie exatamente 8 Series", actual.Value);
 
 
 
@@ -74,7 +74,7 @@ namespace CopaGamesTest
         public void PostNull()
         {
 
-            var controller = new GameAwardsController();
+            var controller = new SerieAwardsController();
 
 
             var response = controller.Post(null);
@@ -82,7 +82,7 @@ namespace CopaGamesTest
             var actual = response.Result as BadRequestObjectResult;
             Assert.IsNotNull(actual);
             Assert.AreEqual(400, actual.StatusCode);
-            Assert.AreEqual("Envie exatamente 8 games", actual.Value);
+            Assert.AreEqual("Envie exatamente 8 Series", actual.Value);
 
         }
     }

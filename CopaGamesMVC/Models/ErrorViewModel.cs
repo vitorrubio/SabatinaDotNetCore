@@ -1,6 +1,6 @@
 using System;
 
-namespace CopaGamesMVC.Models
+namespace CopaSeriesMVC.Models
 {
     public class ErrorViewModel
     {

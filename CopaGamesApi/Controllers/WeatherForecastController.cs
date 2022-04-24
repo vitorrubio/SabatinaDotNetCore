@@ -1,4 +1,4 @@
-﻿using CopaGamesApi.Model;
+﻿using CopaSeriesApi.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CopaGamesApi.Controllers
+namespace CopaSeriesApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

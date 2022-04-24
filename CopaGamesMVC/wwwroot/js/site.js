@@ -11,8 +11,8 @@ bootstrap_alert.warning = function (message) {
 $(function () {
     $.ajax({
         method: "GET",
-        //url: "https://localhost:5001/GameAwards/",
-        url: "https://l3-processoseletivo.azurewebsites.net/api/Competidores?copa=games",
+        //url: "https://localhost:5001/SerieAwards/",
+        url: "https://l3-processoseletivo.azurewebsites.net/api/Competidores?copa=Series",
     }).done(function (resp) {
         const item = ({ titulo, nota, ano, urlImagem }) => `
                         <div class="card col-sm-4">
@@ -24,8 +24,8 @@ $(function () {
                                 <img src="${urlImagem}" style="width:100px; height:auto" />
                             </div>
                         </div>`;
-        const games = JSON.parse(resp);
-        const listao = games.map(item).join('');
+        const Series = JSON.parse(resp);
+        const listao = Series.map(item).join('');
         $("#corpo").append($(listao));
 
     });
@@ -48,7 +48,7 @@ $(function () {
 
         $.ajax({
             method: "POST",
-            url: "https://localhost:44306/GameAwards/",
+            url: "https://localhost:44306/SerieAwards/",
             contentType: 'application/json',
             dataType: 'json',
             data: JSON.stringify(dados),

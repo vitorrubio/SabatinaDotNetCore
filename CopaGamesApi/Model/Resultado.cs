@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CopaGamesApi.Model
+namespace CopaSeriesApi.Model
 {
     public class Resultado
     {
-        public Game Campeao { get; set; }
-        public Game Vice { get; set; }
+        public Serie Campeao { get; set; }
+        public Serie Vice { get; set; }
 
-        public Game TerceiroLugar { get; set; }
+        public Serie TerceiroLugar { get; set; }
 
-        public Game QuartoLugar { get; set; }
+        public Serie QuartoLugar { get; set; }
     }
 }

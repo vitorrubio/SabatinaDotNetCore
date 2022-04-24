@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CopaGamesApi.Model
+namespace CopaSeriesApi.Model
 {
-    public class Game
+    public class Serie
     {
         public string Id { get; set; }
         public string Titulo { get; set; }

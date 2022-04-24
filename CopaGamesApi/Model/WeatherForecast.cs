@@ -1,6 +1,6 @@
 using System;
 
-namespace CopaGamesApi.Model
+namespace CopaSeriesApi.Model
 {
     public class WeatherForecast
     {
