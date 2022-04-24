@@ -11,7 +11,10 @@ bootstrap_alert.warning = function (message) {
 $(function () {
     $.ajax({
         method: "GET",
-        url: "https://localhost:44306/SerieAwards",
+        //url: "https://localhost:44306/SerieAwards",
+        url: "http://localhost:8080/seriesgo",
+        //contentType: 'application/json',
+        //dataType: 'json',
     }).done(function (resp) {
         const item = ({ titulo, nota, ano, urlImagem }) => `
                         <div class="card col-sm-4">
