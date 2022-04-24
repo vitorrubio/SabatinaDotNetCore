@@ -11,8 +11,7 @@ bootstrap_alert.warning = function (message) {
 $(function () {
     $.ajax({
         method: "GET",
-        //url: "https://localhost:5001/SerieAwards/",
-        url: "https://l3-processoseletivo.azurewebsites.net/api/Competidores?copa=Series",
+        url: "https://localhost:44306/SerieAwards",
     }).done(function (resp) {
         const item = ({ titulo, nota, ano, urlImagem }) => `
                         <div class="card col-sm-4">
@@ -24,7 +23,7 @@ $(function () {
                                 <img src="${urlImagem}" style="width:100px; height:auto" />
                             </div>
                         </div>`;
-        const Series = JSON.parse(resp);
+        const Series = resp;
         const listao = Series.map(item).join('');
         $("#corpo").append($(listao));
 

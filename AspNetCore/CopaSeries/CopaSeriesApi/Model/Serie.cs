@@ -11,6 +11,6 @@ namespace CopaSeriesApi.Model
         public string Titulo { get; set; }
         public decimal Nota { get; set; }
         public int Ano { get; set; }
-        public string UrlImg { get; set; }
+        public string UrlImagem { get; set; }
     }
 }
