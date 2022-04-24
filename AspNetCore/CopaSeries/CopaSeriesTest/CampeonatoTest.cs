@@ -11,30 +11,35 @@ namespace CopaSeriesTest
         public void Eliminatorias()
         {
             var competidores = new List<Serie> {
-                new Serie {Titulo = "Mario", Nota = 10, Ano = 2000},  
-                new Serie {Titulo = "Sonic", Nota = 9, Ano = 2001},
-                new Serie {Titulo = "SoT", Nota = 10, Ano = 2002},
-                new Serie {Titulo = "Undertale", Nota = 8, Ano = 2003},
-                new Serie {Titulo = "Celeste", Nota = 7, Ano = 2005},
-                new Serie {Titulo = "Journey", Nota = 6, Ano = 2006},
-                new Serie {Titulo = "Destiny", Nota = 5, Ano = 2007},
-                new Serie {Titulo = "Outer Wilds", Nota = 10, Ano = 2007},
+                new Serie {Titulo = "eliminado1", Nota = 10, Ano = 2000},  
+                new Serie {Titulo = "Terceiro", Nota = 9, Ano = 2001},
+                new Serie {Titulo = "Vice", Nota = 10, Ano = 2002},
+                new Serie {Titulo = "Quarto", Nota = 8, Ano = 2003},
+                new Serie {Titulo = "eliminado4", Nota = 7, Ano = 2005},
+                new Serie {Titulo = "eliminado3", Nota = 6, Ano = 2006},
+                new Serie {Titulo = "eliminado2", Nota = 5, Ano = 2007},
+                new Serie {Titulo = "Campeão", Nota = 10, Ano = 2007},
             };
 
-            /*
-             * A - OW
-             * B - Sonic
-             * C - SoT
-             * D - Undertale
+            /* Quartas de Final:
+             * Jogo A           - Campeão   X   eliminado1      => Campeão
+             * Jogo B           - Terceiro  X   eliminado2      => Terceiro
+             * Jogo C           - Vice      X   eliminado3      => Vice
+             * Jogo D           - Quarto    X   eliminado4      => Quarto
              * 
-             * E - OW | P - Sonic
-             * F - SoT | P - Undertale
+             * Semifinais:
+             * Jogo E           - Campeão   X   Terceiro        => Campeão  
+             * Jogo F           - Vice      X   Quarto          => Vice
              * 
-             * 3 e 4: Sonic 3, Undertale 4
+             * 3º e 4º lugares  - Terceiro  X   Quarto          => Terceiro
              * 
-             * Cameão OW
-             * Vice SoT
+             * Final            - Campeão   X   Vice            => Campeão
              * 
+             * Resultados: 
+             * 1º Lugar - Campeão
+             * 2º Lugar - Vice
+             * 3º Lugar - Terceiro
+             * 4º Lugar - Quarto 
              */
 
             var c = new Campeonato(competidores.ToArray());
@@ -42,10 +47,10 @@ namespace CopaSeriesTest
 
             Assert.IsNotNull(r);
 
-            Assert.AreEqual("Outer Wilds", r.Campeao.Titulo);
-            Assert.AreEqual("SoT", r.Vice.Titulo);
-            Assert.AreEqual("Sonic", r.TerceiroLugar.Titulo);
-            Assert.AreEqual("Undertale", r.QuartoLugar.Titulo);
+            Assert.AreEqual("Campeão", r.Campeao.Titulo);
+            Assert.AreEqual("Vice", r.Vice.Titulo);
+            Assert.AreEqual("Terceiro", r.TerceiroLugar.Titulo);
+            Assert.AreEqual("Quarto", r.QuartoLugar.Titulo);
 
         }
     }
