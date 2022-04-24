@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaGamesApi", "CopaGamesApi\CopaGamesApi.csproj", "{F0A03008-26C7-4DFB-BCFD-574EB45AA0F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaSeriesApi", "CopaGamesApi\CopaSeriesApi.csproj", "{F0A03008-26C7-4DFB-BCFD-574EB45AA0F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaGamesTest", "CopaGamesTest\CopaGamesTest.csproj", "{9D806002-8CCC-47C5-9329-FEB0A127EA33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaSeriesTest", "CopaGamesTest\CopaSeriesTest.csproj", "{9D806002-8CCC-47C5-9329-FEB0A127EA33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaGamesMVC", "CopaGamesMVC\CopaGamesMVC.csproj", "{8FFBB030-085E-4196-91B5-FF5381DAECD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaSeriesMVC", "CopaGamesMVC\CopaSeriesMVC.csproj", "{8FFBB030-085E-4196-91B5-FF5381DAECD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
