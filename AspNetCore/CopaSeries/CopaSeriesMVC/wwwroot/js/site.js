@@ -11,8 +11,9 @@ bootstrap_alert.warning = function (message) {
 $(function () {
     $.ajax({
         method: "GET",
-        url: "https://localhost:44306/SerieAwards",
-        //url: "http://localhost:8080/seriesgo",
+        url: "https://localhost:44380/SerieAwards", //CopaSeriesApi HTTPS
+        //url: "http://localhost:5080/SerieAwards", //CopaSeriesApi HTTP
+        //url: "http://localhost:8080/seriesgo",    //CopaSeriesGo HTTP
         contentType: 'application/json',
         dataType: 'json',
     }).done(function (resp) {
