@@ -75,7 +75,7 @@ namespace CopaSeriesApi
 
                 if (IsRunningInsideIIS(env))
                 {
-                    ConfigureSwaggerInIIS(app, env);
+                    ConfigureSwaggerInIIS(app);
                 }
                 else
                 {
@@ -97,11 +97,10 @@ namespace CopaSeriesApi
             });
         }
 
-        private static void ConfigureSwaggerInIIS(IApplicationBuilder app, IWebHostEnvironment env)
+        private static void ConfigureSwaggerInIIS(IApplicationBuilder app)
         {
 #if DEBUG
             //para uso do swagger no iis, melhor a url raiz/prefixo vir da config
-            string prefixo = env.ApplicationName;
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("v1/swagger.json", "CopaSeriesApi v1"); // will be relative to route prefix, which is itself relative to the application basepath
